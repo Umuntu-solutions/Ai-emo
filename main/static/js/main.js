@@ -3,7 +3,7 @@ let mood, audio, playbtn, nextbtn, prevbtn, mutebtn, seekslider, volumeslider, s
     angry_poster, happy_playlist, happy_title, happy_poster, calm_playlist, calm_title, calm_poster, sad_playlist,
     sad_title, sad_poster, playlist_index;
 
-dir.href = "https://github.com/Umuntu-solutions/emotion-based-song-system/tree/main/songs";
+dir = "static/songs/";
 
 angry_playlist = ["ACDC-BackinBlack", "OhTheLarceny-ManonaMission", "LedZeppelin-ImmigrantSong"];
 angry_title = ["ACDC - Back in Black", "Oh The Larceny - Man on a Mission", "Led Zeppelin - Immigrant Song"];
