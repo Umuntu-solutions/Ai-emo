@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-*)c0pnpky-cu-=gu_f5^tj!n9zpr3thy$(6or)j2=8%jm-l_01
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://emoofy.herokuapp.com/']
+ALLOWED_HOSTS = [https://emoofy.herokuapp.com/]
 
 # Application definition
 INSTALLED_APPS = [
