@@ -45,8 +45,8 @@ Webcam.set({
     jpeg_quality: 90
 });
 Webcam.attach('#imageCapture');
-Webcam.snap( function(image_uri) {
-    document.getElementById('#ageCapture').innerHTML = '<img src="'+image_uri+'"/>';
+Webcam.snap( function(data_uri) {
+    document.getElementById('#ageCapture').innerHTML = '<img src="'+data_uri+'"/>';
 } );
 
 playbtn.addEventListener("click", playPause);
