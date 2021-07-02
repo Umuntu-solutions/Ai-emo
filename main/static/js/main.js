@@ -55,7 +55,7 @@ function take_snapshot() {
 			} );
 		}
 	
- 
+ Webcam.reset()
  
 playbtn.addEventListener("click", playPause);
 nextbtn.addEventListener("click", () => { nextSong(mood) });
@@ -277,7 +277,8 @@ document.querySelector('#test').addEventListener('click', function () {
     getExpression();
 });
 
-const getExpression = () => {
+const getExpression = () =>{
+    Webcam.snap(image_uri => {
         console.log(image_uri)
         fetch('/expression', {
             method: 'POST',
