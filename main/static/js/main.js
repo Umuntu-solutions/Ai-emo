@@ -46,7 +46,7 @@ Webcam.set({
 });
 Webcam.attach('#imageCapture');
 Webcam.snap( function(data_uri) {
-    document.getElementById('#ageCapture').innerHTML = '<img src="'+data_uri+'"/>';
+    document.getElementById('#imageCapture').innerHTML = '<img src="'+data_uri+'"/>';
 } );
 
 playbtn.addEventListener("click", playPause);
