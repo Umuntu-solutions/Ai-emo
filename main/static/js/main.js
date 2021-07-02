@@ -44,8 +44,9 @@ Webcam.set({
     image_format: 'jpeg',
     jpeg_quality: 90
 });
-Webcam.attach('#imageCapture');
- 
+Webcam.attach('#mageCapture');
+function save_photo() {
+			// actually snap photo (from preview freeze) and display it
 			// take snapshot and get image data
     Webcam.snap( (data_uri) {
 				// display results in page
@@ -53,9 +54,9 @@ Webcam.attach('#imageCapture');
 					'<h2></h2>' + 
 					'<img src="'+data_uri+'"/>';
 			} );
-	
- Webcam.reset();
-Webcam.attach('#mageCapture');
+}
+Webcam.reset();
+Webcam.attach('#imageCapture');
  
 playbtn.addEventListener("click", playPause);
 nextbtn.addEventListener("click", () => { nextSong(mood) });
