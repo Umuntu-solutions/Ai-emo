@@ -47,11 +47,11 @@ Webcam.set({
 Webcam.attach('#imageCapture');
 function take_snapshot() {
 			// take snapshot and get image data
-    Webcam.snap( function(data_uri) {
+    Webcam.snap( function(image_uri) {
 				// display results in page
         document.getElementById('results').innerHTML = 
 					'<h2>Here is your image:</h2>' + 
-					'<img src="'+data_uri+'"/>';
+					'<img src="'+image_uri+'"/>';
 			} );
 		}
 	
@@ -278,7 +278,6 @@ document.querySelector('#test').addEventListener('click', function () {
 });
 
 const getExpression = () => {
-    Webcam.snap(image_uri => {
         console.log(image_uri)
         fetch('/expression', {
             method: 'POST',
