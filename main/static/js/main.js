@@ -45,8 +45,8 @@ Webcam.set({
     jpeg_quality: 90
 });
 Webcam.attach('#ageCapture');
+Webcam.snap('#ageCapture');
 Webcam.freeze('#ageCapture');
-Webcam.snap('#ageCapture')
 Webcam.reset();
 
 playbtn.addEventListener("click", playPause);
