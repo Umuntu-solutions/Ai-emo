@@ -45,7 +45,7 @@ Webcam.set({
     jpeg_quality: 90
 });
 Webcam.attach('#imageCapture');
-Webcam.attach('#ageCapture');
+Webcam.freeze('#ageCapture');
 
 playbtn.addEventListener("click", playPause);
 nextbtn.addEventListener("click", () => { nextSong(mood) });
