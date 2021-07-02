@@ -44,9 +44,9 @@ Webcam.set({
     image_format: 'jpeg',
     jpeg_quality: 90
 });
-Webcam.attach();
-Webcam.snap('#ageCapture');
-Webcam.reset();
+Webcam.snap( function(image_uri) {
+    document.getElementById('#ageCapture').innerHTML = '<img src="'+image_uri+'"/>';
+} );
 
 playbtn.addEventListener("click", playPause);
 nextbtn.addEventListener("click", () => { nextSong(mood) });
