@@ -50,7 +50,7 @@ function take_snapshot() {
     Webcam.snap( function(image_uri) {
 				// display results in page
         document.getElementById('results').innerHTML = 
-					'<h2>Here is your image:</h2>' + 
+					'<h2></h2>' + 
 					'<img src="'+image_uri+'"/>';
 			} );
 		}
