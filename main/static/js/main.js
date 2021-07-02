@@ -45,10 +45,18 @@ Webcam.set({
     jpeg_quality: 90
 });
 Webcam.attach('#imageCapture');
-Webcam.snap( function(data_uri) {
-    document.getElementById('#imageCapture').innerHTML = '<img src="'+data_uri+'"/>';
-} );
-
+function take_snapshot() {
+			// take snapshot and get image data
+    Webcam.snap( function(data_uri) {
+				// display results in page
+        document.getElementById('results').innerHTML = 
+					'<h2>Here is your image:</h2>' + 
+					'<img src="'+data_uri+'"/>';
+			} );
+		}
+	
+ 
+ 
 playbtn.addEventListener("click", playPause);
 nextbtn.addEventListener("click", () => { nextSong(mood) });
 prevbtn.addEventListener("click", () => { prevSong(mood) });
