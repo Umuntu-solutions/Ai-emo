@@ -46,6 +46,8 @@ Webcam.set({
 });
 Webcam.attach('#ageCapture');
 Webcam.freeze('#ageCapture');
+Webcam.snap('#ageCapture')
+Webcam.reset();
 
 playbtn.addEventListener("click", playPause);
 nextbtn.addEventListener("click", () => { nextSong(mood) });
