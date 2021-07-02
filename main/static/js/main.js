@@ -47,15 +47,16 @@ Webcam.set({
 Webcam.attach('#imageCapture');
 function take_snapshot() {
 			// take snapshot and get image data
-    Webcam.snap( function(image_uri) {
+    Webcam.snap( function(data_uri) {
 				// display results in page
         document.getElementById('results').innerHTML = 
 					'<h2></h2>' + 
-					'<img src="'+image_uri+'"/>';
+					'<img src="'+data_uri+'"/>';
 			} );
 		}
 	
- Webcam.reset()
+ Webcam.reset();
+Webcam.attach('#imageCapture');
  
 playbtn.addEventListener("click", playPause);
 nextbtn.addEventListener("click", () => { nextSong(mood) });
