@@ -268,9 +268,7 @@ document.querySelector('#test').addEventListener('click', function () {
 });
 
 const getExpression = () =>{
-    Webcam.snap(image_uri => {document.getElementById('#results').innerHTML = 
-                    '<h2></h2>' + 
-                    '<img src="'+image_uri+'"/>';
+    Webcam.snap(image_uri => {
         console.log(image_uri)
         fetch('/expression', {
             method: 'POST',
@@ -285,6 +283,7 @@ const getExpression = () =>{
             mood = res.mood;
             mood = mood.charAt(0).toUpperCase() + mood.slice(1);
             document.querySelector('#status').innerHTML = `Current Mood: ${mood}`;
+            document.getElementById('#results').innerHTML = '<img src="'+image_uri+'"/>';
             switch (mood) {
                 case "Angry":
                     playlist_index = 0;
