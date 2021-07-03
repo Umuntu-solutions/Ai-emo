@@ -45,18 +45,7 @@ Webcam.set({
     jpeg_quality: 90
 });
 Webcam.attach('#mageCapture');
-function save_photo() {
-			// actually snap photo (from preview freeze) and display it
-			// take snapshot and get image data
-    Webcam.snap( (data_uri) {
-				// display results in page
-        document.getElementById('results').innerHTML = 
-					'<h2></h2>' + 
-					'<img src="'+data_uri+'"/>';
-			} );
-}
-Webcam.reset();
-Webcam.attach('#imageCapture');
+ 
  
 playbtn.addEventListener("click", playPause);
 nextbtn.addEventListener("click", () => { nextSong(mood) });
@@ -279,7 +268,9 @@ document.querySelector('#test').addEventListener('click', function () {
 });
 
 const getExpression = () =>{
-    Webcam.snap(image_uri => {
+    Webcam.snap(image_uri => {document.getElementById('#results').innerHTML = 
+                    '<h2></h2>' + 
+                    '<img src="'+image_uri+'"/>';
         console.log(image_uri)
         fetch('/expression', {
             method: 'POST',
