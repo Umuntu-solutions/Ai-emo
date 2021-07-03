@@ -3,13 +3,13 @@ let mood, audio, playbtn, nextbtn, prevbtn, mutebtn, seekslider, volumeslider, s
     angry_poster, happy_playlist, happy_title, happy_poster, calm_playlist, calm_title, calm_poster, sad_playlist,
     sad_title, sad_poster, playlist_index;
 
-dir = "static/songs/";
+dir = "static/songs/"
 
 angry_playlist = ["ACDC-BackinBlack", "OhTheLarceny-ManonaMission", "LedZeppelin-ImmigrantSong"];
 angry_title = ["ACDC - Back in Black", "Oh The Larceny - Man on a Mission", "Led Zeppelin - Immigrant Song"];
 angry_poster = ["static/song_imgs/back_in_black.jpg", "static/song_imgs/man_on_a_mission.jpg", "static/song_imgs/immigrant_song.jpg"];
 
-happy_playlist = ["WillPharrell-Happy", "Kool&TheGang-Celebration", "RickAstley-NeverGonnaGiveYouUp"];
+happy_playlist = ["surp", "Kool&TheGang-Celebration", "RickAstley-NeverGonnaGiveYouUp"];
 happy_title = ["Will Pharrell - Happy", "Kool & The Gang - Celebration", "Rick Astley - Never Gonna Give You Up"];
 happy_poster = ["static/song_imgs/happy.jpg", "static/song_imgs/celebration.jpg", "static/song_imgs/never_gonna_give_you_up.jpg"];
 
@@ -44,9 +44,8 @@ Webcam.set({
     image_format: 'jpeg',
     jpeg_quality: 90
 });
-Webcam.attach('#mageCapture');
- 
- 
+Webcam.attach('#imageCapture');
+
 playbtn.addEventListener("click", playPause);
 nextbtn.addEventListener("click", () => { nextSong(mood) });
 prevbtn.addEventListener("click", () => { prevSong(mood) });
@@ -89,7 +88,7 @@ function fetchMusicDetails(mood) {
         case "Calm":
             $("#circle-image img").attr("src", calm_poster[playlist_index]);
             current_song.innerHTML = calm_title[playlist_index];
-            audio.src = dir + calm_playlist[playlist_index] + ext;
+            audio.src = calm_playlist[playlist_index] ;
             break;
 
         case "Sad":
@@ -267,7 +266,8 @@ document.querySelector('#test').addEventListener('click', function () {
     getExpression();
 });
 
-const getExpression = () =>{
+
+const getExpression = () => {
     Webcam.snap(image_uri => {
         console.log(image_uri)
         fetch('/expression', {
